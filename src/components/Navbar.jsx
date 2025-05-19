@@ -1,21 +1,21 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router";
-// import AuthContext from "../context/AuthContext";
-// import LoadingSpinners from "./LoadingSpinners";
+import AuthContext from "../context/AuthContext";
+import LoadingSpinners from "./LoadingSpinners";
 // import "./styles.css";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
-  // const { loginUser, signOutUser, loading } = useContext(AuthContext);
-  // if (loading) {
-  //   return <LoadingSpinners></LoadingSpinners>;
-  // }
+  const { loginUser, signOutUser, loading } = useContext(AuthContext);
+  if (loading) {
+    return <LoadingSpinners></LoadingSpinners>;
+  }
 
   const navLinks = (
     <>
       <li>
         <NavLink className={"hover:bg-green-700 hover:text-white"} to={"apps"}>
-          Apps
+          Home
         </NavLink>
       </li>
       <li>
@@ -23,7 +23,7 @@ const Navbar = () => {
           className={"hover:bg-green-700 hover:text-white"}
           to={"myprofile"}
         >
-          MyProfile
+          All Groups
         </NavLink>
       </li>
       <li>
@@ -31,31 +31,39 @@ const Navbar = () => {
           className={"hover:bg-green-700 hover:text-white"}
           to={"community"}
         >
-          Community
+          Create Group
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={"hover:bg-green-700 hover:text-white"}
+          to={"community"}
+        >
+          My Groups
         </NavLink>
       </li>
     </>
   );
 
-  // const handleLogout = () => {
-  //   signOutUser()
-  //     .then(() => {
-  //       Swal.fire({
-  //         title: "✅ Logout Successful",
-  //         text: "You have been successfully logged out.",
-  //         icon: "success",
-  //         draggable: true,
-  //       });
-  //     })
-  //     .catch(() => {
-  //       Swal.fire({
-  //         title: "❌ Logout Failed",
-  //         text: "Something went wrong. Please try again.",
-  //         icon: "error",
-  //         draggable: true,
-  //       });
-  //     });
-  // };
+  const handleLogout = () => {
+    signOutUser()
+      .then(() => {
+        Swal.fire({
+          title: "✅ Logout Successful",
+          text: "You have been successfully logged out.",
+          icon: "success",
+          draggable: true,
+        });
+      })
+      .catch(() => {
+        Swal.fire({
+          title: "❌ Logout Failed",
+          text: "Something went wrong. Please try again.",
+          icon: "error",
+          draggable: true,
+        });
+      });
+  };
 
   return (
     <div className="navbar p-0">
@@ -95,7 +103,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-3">
-        {/* <div className="">
+        <div className="">
           {loginUser && (
             <img
               title={`${loginUser.displayName}`}
@@ -107,9 +115,9 @@ const Navbar = () => {
               alt=""
             />
           )}
-        </div> */}
+        </div>
 
-        {/* <div className="">
+        <div className="">
           {loginUser ? (
             <NavLink
               onClick={handleLogout}
@@ -126,14 +134,7 @@ const Navbar = () => {
               Login
             </NavLink>
           )}
-        </div> */}
-
-        <NavLink
-          className={"btn hover:bg-green-700 hover:text-white"}
-          to={"login"}
-        >
-          Login
-        </NavLink>
+        </div>
       </div>
     </div>
   );

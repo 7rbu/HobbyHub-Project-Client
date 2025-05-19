@@ -1,15 +1,85 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { useContext } from "react";
+import { Link, Navigate, useLocation, useNavigate } from "react-router";
+import AuthContext from "../context/AuthContext";
+import Swal from "sweetalert2";
 
 export default function RegisterPage() {
+  const { createUser, profileUpdate, setLoading, signInWithGoogle } =
+    useContext(AuthContext);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const handleRegister = (e) => {
     e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
-    const UserInfo = Object.fromEntries(formData.entries());
-    console.log(UserInfo);
+    const displayName = e.target.name.value;
+    const photoURL = e.target.photo.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const passwordRegExp = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
-    
+    console.log(displayName, photoURL);
+
+    if (passwordRegExp.test(password) === false) {
+      Swal.error(
+        "Password must be at least 6 characters and include both uppercase and lowercase letters."
+      );
+      return;
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        Swal.fire({
+          title: "🎉 Registration Successful!",
+          text: "Registration successful. Let's get started!",
+          icon: "success",
+          draggable: true,
+        });
+        setLoading(false);
+        console.log(result);
+
+        profileUpdate({ displayName: displayName, photoURL: photoURL })
+          .then(() => {
+            navigate(`${location.state ? location.state : "/"}`);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: "❌ Registration Failed",
+          text: "Something went wrong. Please try again.",
+          icon: "error",
+          draggable: true,
+        });
+        setLoading(false);
+        console.log(error);
+        return;
+      });
+  };
+
+  const handleGoogleSignUp = () => {
+    signInWithGoogle()
+      .then((result) => {
+        Swal.fire({
+          title: "🎉 Registration Successful!",
+          text: "Registration successful. Let's get started!",
+          icon: "success",
+          draggable: true,
+        });
+        setLoading(false);
+        navigate(`${location.state ? location.state : "/"}`);
+        console.log(result);
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: "🎉 Sign in with Google failed",
+          icon: "error",
+          draggable: true,
+        });
+        console.log(error);
+      });
   };
 
   return (
@@ -33,6 +103,22 @@ export default function RegisterPage() {
               name="name"
               required
               placeholder="John Doe"
+              className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-sm font-semibold text-gray-700"
+            >
+              Photo
+            </label>
+            <input
+              id="photo"
+              type="text"
+              name="photo"
+              required
+              placeholder="Photo URL"
               className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
@@ -86,7 +172,10 @@ export default function RegisterPage() {
         </div>
 
         <div className="flex justify-center flex-col sm:flex-row gap-4">
-          <button className="cursor-pointer flex items-center justify-center gap-2 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition">
+          <button
+            onClick={handleGoogleSignUp}
+            className="cursor-pointer flex items-center justify-center gap-2 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition"
+          >
             <img
               src="https://www.svgrepo.com/show/475656/google-color.svg"
               alt="Google"

@@ -1,7 +1,57 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
+import AuthContext from "../context/AuthContext";
+import Swal from "sweetalert2";
 
 export default function LoginPage() {
+  const { signInUser, setLoading, signInWithGoogle } =
+    useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    signInUser(email, password)
+      .then(() => {
+        Swal.fire({
+          title: "✅ Sign-In Success",
+          text: "Welcome back! You’ve signed in successfully.",
+          icon: "success",
+          draggable: true,
+        });
+        navigate(`${location.state ? location.state : "/"}`);
+        setLoading(false);
+      })
+      .catch(() => {
+        Swal.fire({
+          title: "❌ Sign-In Failed",
+          text: "Invalid credentials. Please check your email and password.",
+          icon: "error",
+          draggable: true,
+        });
+        setLoading(false);
+      });
+  };
+
+  const handleGoogleSignUp = () => {
+    signInWithGoogle()
+      .then(() => {
+        Swal.fire({
+          title: "🎉 Login Successful!",
+          text: "Login successful. Let's get started!",
+          icon: "success",
+          draggable: true,
+        });
+        setLoading(false);
+        navigate(`${location.state ? location.state : "/"}`);
+      })
+      .catch(() => {});
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 px-4 py-8">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
@@ -9,7 +59,7 @@ export default function LoginPage() {
           Sign in to your account
         </h2>
 
-        <form className="space-y-5">
+        <form onSubmit={handleLogin} className="space-y-5">
           <div>
             <label
               htmlFor="email"
@@ -20,6 +70,7 @@ export default function LoginPage() {
             <input
               id="email"
               type="email"
+              name="email"
               required
               placeholder="example@mail.com"
               className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -36,6 +87,7 @@ export default function LoginPage() {
             <input
               id="password"
               type="password"
+              name="password"
               required
               placeholder="••••••••"
               className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -63,7 +115,11 @@ export default function LoginPage() {
         </div>
 
         <div className="flex justify-center flex-col sm:flex-row gap-4">
-          <button className="cursor-pointer flex items-center justify-center gap-2 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition">
+          <button
+            onClick={handleGoogleSignUp}
+            type="button"
+            className="cursor-pointer flex items-center justify-center gap-2 border border-gray-300 py-2 px-4 rounded-lg hover:bg-gray-100 transition"
+          >
             <img
               src="https://www.svgrepo.com/show/475656/google-color.svg"
               alt="Google"
