@@ -18,7 +18,9 @@ export default function RegisterPage() {
     const password = e.target.password.value;
     const passwordRegExp = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
-    console.log(displayName, photoURL);
+    const form = e.target;
+    const formData = new FormData(form);
+    const userData = Object.fromEntries(formData.entries());
 
     if (passwordRegExp.test(password) === false) {
       Swal.error(
@@ -44,6 +46,18 @@ export default function RegisterPage() {
           })
           .catch((error) => {
             console.log(error);
+          });
+
+        fetch("http://localhost:3000/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
           });
       })
       .catch((error) => {

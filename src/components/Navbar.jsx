@@ -14,30 +14,30 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink className={"hover:bg-green-700 hover:text-white"} to={"apps"}>
+        <NavLink to={"home"} className={"hover:bg-green-700 hover:text-white"}>
           Home
         </NavLink>
       </li>
       <li>
         <NavLink
+          to={"allgroups"}
           className={"hover:bg-green-700 hover:text-white"}
-          to={"myprofile"}
         >
           All Groups
         </NavLink>
       </li>
       <li>
         <NavLink
+          to={"creategroup"}
           className={"hover:bg-green-700 hover:text-white"}
-          to={"community"}
         >
           Create Group
         </NavLink>
       </li>
       <li>
         <NavLink
+          to={"mygroup"}
           className={"hover:bg-green-700 hover:text-white"}
-          to={"community"}
         >
           My Groups
         </NavLink>
@@ -94,7 +94,7 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to={"/"} className="btn btn-ghost text-xl p-0">
-          CodeCart
+          Papaya
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
