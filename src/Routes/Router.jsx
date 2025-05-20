@@ -19,6 +19,7 @@ const router = createBrowserRouter([
       {
         path: "home",
         Component: Home,
+        loader: () => fetch("http://localhost:3000/creategroup/ontime"),
       },
       {
         path: "allgroups",
