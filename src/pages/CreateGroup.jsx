@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import AuthContext from "../context/AuthContext";
+import Swal from "sweetalert2";
 
 const CreateGroup = () => {
   const { loginUser } = useContext(AuthContext);
@@ -22,6 +23,14 @@ const CreateGroup = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Group Created Successfully!",
+          text: "Your group is live. Let the fun begin!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       });
   };
 

@@ -1,8 +1,46 @@
 import React from "react";
+import { format } from "date-fns";
 import { useLoaderData } from "react-router";
+import Swal from "sweetalert2";
+import ErrorPages from "./ErrorPages";
 
 const Details = () => {
   const groupData = useLoaderData();
+  if (groupData === "error") {
+    return <ErrorPages></ErrorPages>;
+  }
+  const {
+    imageUrl,
+    groupName,
+    hobbyCategory,
+    description,
+    meetingLocation,
+    startDate,
+    maxMembers,
+    userName,
+    userEmail,
+  } = groupData;
+
+  const handleJoin = (date) => {
+    const today = format(new Date(), "yyyy-MM-dd");
+    if (date < today) {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "This group is no longer active",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "You have successfully joined the group",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  };
 
   return (
     <>
@@ -10,17 +48,17 @@ const Details = () => {
         <div className="bg-gradient-to-br from-white via-gray-100 to-indigo-100 border border-gray-200 shadow-xl rounded-2xl p-6 sm:p-10">
           <div className="flex flex-col items-center text-center">
             <img
-              src={groupData.imageUrl}
+              src={imageUrl}
               className="w-32 h-32 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-indigo-500 shadow-lg"
             />
             <h1 className="text-2xl sm:text-3xl font-semibold text-indigo-700 mt-4">
-              {groupData.groupName}
+              {groupName}
             </h1>
             <p className="text-sm sm:text-base text-gray-500 mt-1 italic">
-              {groupData.hobbyCategory}
+              {hobbyCategory}
             </p>
             <p className="mt-4 text-base sm:text-lg text-gray-700 max-w-3xl leading-relaxed">
-              {groupData.description}
+              {description}
             </p>
           </div>
 
@@ -31,27 +69,30 @@ const Details = () => {
               <p className="font-semibold text-gray-800 mb-1">
                 Meeting Location
               </p>
-              <p>{groupData.meetingLocation}</p>
+              <p>{meetingLocation}</p>
             </div>
             <div className="text-center sm:text-left">
               <p className="font-semibold text-gray-800 mb-1">Start Date</p>
-              <p>{groupData.startDate}</p>
+              <p>{startDate}</p>
             </div>
             <div className="text-center sm:text-left">
               <p className="font-semibold text-gray-800 mb-1">Max Members</p>
-              <p>{groupData.maxMembers}</p>
+              <p>{maxMembers}</p>
             </div>
             <div className="text-center sm:text-left">
               <p className="font-semibold text-gray-800 mb-1">Organizer</p>
-              <p>{groupData.userName}</p>
+              <p>{userName}</p>
             </div>
             <div className="text-center sm:text-left sm:col-span-2">
               <p className="font-semibold text-gray-800 mb-1">Contact Email</p>
-              <p>{groupData.userEmail}</p>
+              <p>{userEmail}</p>
             </div>
           </div>
           <div className="mt-10 flex justify-center">
-            <button className="cursor-pointer px-6 py-2 sm:px-8 sm:py-3 bg-indigo-600 hover:bg-indigo-700 text-white text-sm sm:text-base font-medium rounded-md shadow transition-all duration-300">
+            <button
+              onClick={() => handleJoin(startDate)}
+              className="cursor-pointer px-6 py-2 sm:px-8 sm:py-3 bg-indigo-600 hover:bg-indigo-700 text-white text-sm sm:text-base font-medium rounded-md shadow transition-all duration-300"
+            >
               Join Group
             </button>
           </div>

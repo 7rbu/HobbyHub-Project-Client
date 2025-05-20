@@ -26,7 +26,7 @@ const AllGroups = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
-              {group.map((group) => (
+              {group?.map((group) => (
                 <tr
                   key={group._id}
                   className="hover:bg-gray-50 transition duration-150"

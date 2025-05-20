@@ -1,11 +1,17 @@
 import React, { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 import { useLoaderData } from "react-router";
+import ErrorPages from "./ErrorPages";
 
 const Update = () => {
   const { loginUser } = useContext(AuthContext);
 
   const updateGroupData = useLoaderData();
+
+  if (updateGroupData === "error") {
+    return <ErrorPages></ErrorPages>;
+  }
+
   console.log(updateGroupData);
   const {
     _id,
