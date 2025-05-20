@@ -7,6 +7,9 @@ import AllGroups from "../pages/AllGroups";
 import CreateGroup from "../pages/CreateGroup";
 import MyGroup from "../pages/MyGroup";
 import PrivetRoutes from "./../PrivetRoutes/PrivetRoutes";
+import Update from "../pages/Update";
+import Details from "../pages/Details";
+import ErrorPages from "./../pages/ErrorPages";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +23,7 @@ const router = createBrowserRouter([
       {
         path: "allgroups",
         Component: AllGroups,
+        loader: () => fetch("http://localhost:3000/creategroup"),
       },
       {
         path: "creategroup",
@@ -36,7 +40,18 @@ const router = createBrowserRouter([
             <MyGroup></MyGroup>
           </PrivetRoutes>
         ),
-        loader: () => fetch("http://localhost:3000/creategroup"),
+      },
+      {
+        path: "allgroups/details/:id",
+        Component: Details,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/creategroup/${params.id}`),
+      },
+      {
+        path: "mygroup/update/:id",
+        Component: Update,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/creategroup/${params.id}`),
       },
       {
         path: "login",
@@ -46,7 +61,16 @@ const router = createBrowserRouter([
         path: "register",
         Component: RegisterPage,
       },
+
+      {
+        path: "*",
+        Component: ErrorPages,
+      },
     ],
+  },
+  {
+    path: "*",
+    Component: ErrorPages,
   },
 ]);
 

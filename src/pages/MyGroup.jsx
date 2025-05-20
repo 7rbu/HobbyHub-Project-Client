@@ -1,18 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router";
+import React, { useContext, useEffect, useState } from "react";
+
 import Swal from "sweetalert2";
+import AuthContext from "../context/AuthContext";
+import { Link } from "react-router";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
 
 const MyGroup = () => {
+  const { loginUser } = useContext(AuthContext);
   const [group, setGroup] = useState([]);
-  const allGroup = useLoaderData();
 
   useEffect(() => {
-    setGroup(allGroup);
-  }, [allGroup]);
+    fetch(`http://localhost:3000/creategroup/mygroup/${loginUser?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setGroup(data);
+      });
+  }, [loginUser]);
 
-  const handleUpdate = (id) => {
-    console.log(id);
-  };
+  console.log(group);
+
+  // const handleUpdate = (id) => {
+  //   console.log(id);
+  // };
 
   const handleDelete = (id) => {
     console.log(id);
@@ -36,67 +45,74 @@ const MyGroup = () => {
   };
 
   return (
-    <div className="overflow-x-auto mt-10 px-4">
-      <div className="inline-block min-w-full shadow-lg rounded-xl overflow-hidden">
-        <table className="min-w-full bg-white text-sm text-gray-700 text-center">
-          <thead className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white uppercase tracking-wider">
-            <tr>
-              <th className="px-6 py-4 font-semibold">Image</th>
-              <th className="px-6 py-4 font-semibold">Group Name</th>
-              <th className="px-6 py-4 font-semibold">Category</th>
-              <th className="px-6 py-4 font-semibold">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-100">
-            {group.map((group) => (
-              <tr
-                key={group._id}
-                className="hover:bg-gray-50 transition duration-150"
-              >
-                <td className="px-6 py-4 flex justify-center">
-                  <div className="w-14 h-14">
-                    <img
-                      src={group.imageUrl}
-                      alt="Group"
-                      className="w-full h-full object-cover rounded-md border border-gray-300"
-                    />
-                  </div>
-                </td>
-                <td className="px-6 py-4 font-medium text-gray-900">
-                  {group.groupName}
-                </td>
-                <td className="px-6 py-4 text-gray-700">
-                  {group.hobbyCategory}
-                </td>
-                <td className="px-6 py-4">
-                  <div className="flex justify-center gap-2">
-                    <button
-                      className="px-4 py-2 text-xs font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 transition duration-150"
-                      onClick={() => handleUpdate(group._id)}
-                    >
-                      ✏️ Update
-                    </button>
-                    <button
-                      className="px-4 py-2 text-xs font-semibold text-white bg-red-500 rounded-md hover:bg-red-600 transition duration-150"
-                      onClick={() => handleDelete(group._id)}
-                    >
-                      🗑️ Delete
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-            {allGroup.length === 0 && (
+    <>
+      <div className="overflow-x-auto mt-10 px-4">
+        <div className="inline-block min-w-full shadow-lg rounded-xl overflow-hidden">
+          <table className="min-w-full bg-white text-sm text-gray-700 text-center">
+            <thead className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white uppercase tracking-wider">
               <tr>
-                <td colSpan="4" className="px-6 py-8 text-center text-gray-500">
-                  No groups found.
-                </td>
+                <th className="px-6 py-4 font-semibold">Image</th>
+                <th className="px-6 py-4 font-semibold">Group Name</th>
+                <th className="px-6 py-4 font-semibold">Category</th>
+                <th className="px-6 py-4 font-semibold">Actions</th>
               </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {group.map((group) => (
+                <tr
+                  key={group._id}
+                  className="hover:bg-gray-50 transition duration-150"
+                >
+                  <td className="px-6 py-4 flex justify-center">
+                    <div className="w-14 h-14">
+                      <img
+                        src={group.imageUrl}
+                        alt="Group"
+                        className="w-full h-full object-cover rounded-md border border-gray-300"
+                      />
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 font-medium text-gray-900">
+                    {group.groupName}
+                  </td>
+                  <td className="px-6 py-4 text-gray-700">
+                    {group.hobbyCategory}
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="flex justify-center gap-3">
+                      <Link to={`/mygroup/update/${group._id}`}>
+                        <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-200">
+                          <FaEdit className="text-white text-base" />
+                          <span>Update</span>
+                        </button>
+                      </Link>
+
+                      <button
+                        onClick={() => handleDelete(group._id)}
+                        className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-lg shadow-md hover:bg-red-600 hover:shadow-lg transition-all duration-200"
+                      >
+                        <FaTrashAlt className="text-white text-base" />
+                        <span>Delete</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+              {group.length === 0 && (
+                <tr>
+                  <td
+                    colSpan="4"
+                    className="px-6 py-8 text-center text-gray-500"
+                  >
+                    No groups found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
