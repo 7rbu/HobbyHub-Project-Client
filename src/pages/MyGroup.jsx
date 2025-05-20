@@ -81,7 +81,7 @@ const MyGroup = () => {
                   <td className="px-6 py-4">
                     <div className="flex justify-center gap-3">
                       <Link to={`/mygroup/update/${group._id}`}>
-                        <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-200">
+                        <button className="cursor-pointer flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-200">
                           <FaEdit className="text-white text-base" />
                           <span>Update</span>
                         </button>
@@ -89,7 +89,7 @@ const MyGroup = () => {
 
                       <button
                         onClick={() => handleDelete(group._id)}
-                        className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-lg shadow-md hover:bg-red-600 hover:shadow-lg transition-all duration-200"
+                        className="cursor-pointer flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-lg shadow-md hover:bg-red-600 hover:shadow-lg transition-all duration-200"
                       >
                         <FaTrashAlt className="text-white text-base" />
                         <span>Delete</span>

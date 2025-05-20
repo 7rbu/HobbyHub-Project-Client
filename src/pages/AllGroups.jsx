@@ -49,7 +49,7 @@ const AllGroups = () => {
                   <td className="px-6 py-4">
                     <div className="flex justify-center gap-2">
                       <Link to={`/allgroups/details/${group._id}`}>
-                        <button className="px-4 py-2 text-xs font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 transition duration-150">
+                        <button className="cursor-pointer px-4 py-2 text-xs font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 transition duration-150">
                           See More
                         </button>
                       </Link>
