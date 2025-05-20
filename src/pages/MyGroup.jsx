@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
+import Swal from "sweetalert2";
 
 const MyGroup = () => {
+  const [group, setGroup] = useState([]);
   const allGroup = useLoaderData();
+
+  useEffect(() => {
+    setGroup(allGroup);
+  }, [allGroup]);
 
   const handleUpdate = (id) => {
     console.log(id);
@@ -10,6 +16,23 @@ const MyGroup = () => {
 
   const handleDelete = (id) => {
     console.log(id);
+    fetch(`http://localhost:3000/creategroup/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount) {
+          const remainingData = group.filter((user) => user._id !== id);
+          setGroup(remainingData);
+        }
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Group Delete",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
   };
 
   return (
@@ -25,7 +48,7 @@ const MyGroup = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
-            {allGroup.map((group) => (
+            {group.map((group) => (
               <tr
                 key={group._id}
                 className="hover:bg-gray-50 transition duration-150"
