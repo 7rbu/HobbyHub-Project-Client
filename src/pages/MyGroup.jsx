@@ -10,7 +10,9 @@ const MyGroup = () => {
   const [group, setGroup] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/creategroup/mygroup/${loginUser?.email}`)
+    fetch(
+      `https://papaya-server.vercel.app/creategroup/mygroup/${loginUser?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setGroup(data);
@@ -25,7 +27,7 @@ const MyGroup = () => {
 
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`http://localhost:3000/creategroup/${id}`, {
+    fetch(`https://papaya-server.vercel.app/creategroup/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -66,7 +68,7 @@ const MyGroup = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
-              {group.map((group) => (
+              {group?.map((group) => (
                 <tr
                   key={group._id}
                   className="hover:bg-gray-50 transition duration-150"

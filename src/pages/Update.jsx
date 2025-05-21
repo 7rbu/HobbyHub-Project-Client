@@ -33,7 +33,7 @@ const Update = () => {
     const groupData = Object.fromEntries(formData.entries());
     console.log(groupData);
 
-    fetch(`http://localhost:3000/creategroup/${_id}`, {
+    fetch(`https://papaya-server.vercel.app/creategroup/${_id}`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",

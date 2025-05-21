@@ -48,7 +48,7 @@ export default function RegisterPage() {
             console.log(error);
           });
 
-        fetch("http://localhost:3000/register", {
+        fetch("https://papaya-server.vercel.app/register", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

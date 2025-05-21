@@ -17,14 +17,19 @@ const router = createBrowserRouter([
     Component: MainLayout,
     children: [
       {
+        index: true,
+        Component: Home,
+      },
+      {
         path: "home",
         Component: Home,
-        loader: () => fetch("http://localhost:3000/creategroup/ontime"),
+        loader: () =>
+          fetch("https://papaya-server.vercel.app/creategroup/ontime"),
       },
       {
         path: "allgroups",
         Component: AllGroups,
-        loader: () => fetch("http://localhost:3000/creategroup"),
+        loader: () => fetch("https://papaya-server.vercel.app/creategroup"),
       },
       {
         path: "creategroup",
@@ -46,13 +51,13 @@ const router = createBrowserRouter([
         path: "allgroups/details/:id",
         Component: Details,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/creategroup/${params.id}`),
+          fetch(`https://papaya-server.vercel.app/creategroup/${params.id}`),
       },
       {
         path: "mygroup/update/:id",
         Component: Update,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/creategroup/${params.id}`),
+          fetch(`https://papaya-server.vercel.app/creategroup/${params.id}`),
       },
       {
         path: "login",

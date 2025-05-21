@@ -14,7 +14,7 @@ const Home = () => {
       <Slider></Slider>
 
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full mx-auto">
-        {featuredGroupData.map((group) => (
+        {featuredGroupData?.map((group) => (
           <FeaturedGroup key={group._id} group={group} />
         ))}
       </div>

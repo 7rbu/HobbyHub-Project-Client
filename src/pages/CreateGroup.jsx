@@ -14,7 +14,7 @@ const CreateGroup = () => {
     const groupData = Object.fromEntries(formData.entries());
     console.log(groupData);
 
-    fetch("http://localhost:3000/creategroup", {
+    fetch("https://papaya-server.vercel.app/creategroup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
