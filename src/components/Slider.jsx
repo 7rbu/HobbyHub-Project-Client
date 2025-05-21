@@ -21,7 +21,7 @@ const Slider = () => {
 
   return (
     <>
-      <div className="md:w-11/12 mx-auto p-4">
+      <div className="md:w-11/12 mx-auto">
         <div className="reviews-carousel my-12">
           <h2 className="text-indigo-700 text-center font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl my-6">
            See What Everyone’s Up To!
