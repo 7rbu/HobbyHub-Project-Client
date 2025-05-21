@@ -185,7 +185,7 @@ const CreateGroup = () => {
             <hr className="my-8 border-gray-300" />
 
             <div className="text-center mb-6">
-              <h2 className="text-xl font-semibold text-indigo-600">
+              <h2 className="text-xl font-semibold text-indigo-700">
                 Your Details (Group Admin)
               </h2>
             </div>
@@ -200,7 +200,8 @@ const CreateGroup = () => {
               <input
                 id="userName"
                 type="text"
-                value={`${loginUser?.displayName}`}
+                defaultValue={`${loginUser?.displayName}`}
+                readOnly
                 name="userName"
                 required
                 placeholder="Your Full Name"
@@ -218,7 +219,8 @@ const CreateGroup = () => {
               <input
                 id="userEmail"
                 type="email"
-                value={`${loginUser?.email}`}
+                defaultValue={`${loginUser?.email}`}
+                readOnly
                 name="userEmail"
                 required
                 placeholder="you@example.com"
@@ -229,7 +231,7 @@ const CreateGroup = () => {
             <div className="pt-4">
               <button
                 type="submit"
-                className="cursor-pointer w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-150 ease-in-out transform hover:scale-105"
+                className="cursor-pointer w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-500 ease-in-out transform hover:scale-105"
               >
                 Create Hobby Group
               </button>

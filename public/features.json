@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Find Local Hobby Groups",
+    "description": "Discover clubs near you based on what you enjoy.",
+    "icon": "🔍"
+  },
+  {
+    "title": "Start Your Own Group",
+    "description": "Create and manage your own hobby circle in minutes.",
+    "icon": "⚙️"
+  },
+  {
+    "title": "Meet Real People",
+    "description": "Make new friends through shared interests and real meetups.",
+    "icon": "🤝"
+  },
+  {
+    "title": "Easy to Use",
+    "description": "Simple and clean interface—no tech skills needed.",
+    "icon": "👌"
+  },
+  {
+    "title": "Stay Updated",
+    "description": "Get notified about group events and chats.",
+    "icon": "🔔"
+  }
+]

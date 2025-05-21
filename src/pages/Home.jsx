@@ -3,10 +3,11 @@ import Theme from "../components/Theme";
 import Slider from "../components/Slider";
 import { useLoaderData } from "react-router";
 import FeaturedGroup from "../components/FeaturedGroup";
+import CountUpCard from "../components/CountUpCard";
+import FeaturesSections from "../components/FeaturesSections";
 
 const Home = () => {
   const featuredGroupData = useLoaderData();
-  console.log(featuredGroupData);
   return (
     <div>
       <Theme></Theme>
@@ -17,6 +18,8 @@ const Home = () => {
           <FeaturedGroup key={group._id} group={group} />
         ))}
       </div>
+      <CountUpCard></CountUpCard>
+      <FeaturesSections></FeaturesSections>
     </div>
   );
 };

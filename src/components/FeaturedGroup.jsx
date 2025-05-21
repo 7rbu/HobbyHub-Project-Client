@@ -44,7 +44,7 @@ const FeaturedGroup = ({ group }) => {
 
           <div className="mt-6 flex justify-center">
             <button
-              className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg transition"
+              className="cursor-pointer bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg transition"
               onClick={() => setIsModalOpen(true)}
             >
               Open Details

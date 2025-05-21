@@ -4,6 +4,7 @@ import AuthContext from "../context/AuthContext";
 import LoadingSpinners from "./LoadingSpinners";
 // import "./styles.css";
 import Swal from "sweetalert2";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { loginUser, signOutUser, loading } = useContext(AuthContext);
@@ -14,14 +15,14 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink to={"home"} className={"hover:bg-green-700 hover:text-white"}>
+        <NavLink to={"home"} className={"hover:bg-indigo-700 hover:text-white"}>
           Home
         </NavLink>
       </li>
       <li>
         <NavLink
           to={"allgroups"}
-          className={"hover:bg-green-700 hover:text-white"}
+          className={"hover:bg-indigo-700 hover:text-white"}
         >
           All Groups
         </NavLink>
@@ -29,7 +30,7 @@ const Navbar = () => {
       <li>
         <NavLink
           to={"creategroup"}
-          className={"hover:bg-green-700 hover:text-white"}
+          className={"hover:bg-indigo-700 hover:text-white"}
         >
           Create Group
         </NavLink>
@@ -37,7 +38,7 @@ const Navbar = () => {
       <li>
         <NavLink
           to={"mygroup"}
-          className={"hover:bg-green-700 hover:text-white"}
+          className={"hover:bg-indigo-700 hover:text-white"}
         >
           My Groups
         </NavLink>
@@ -103,17 +104,30 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-3">
-        <div className="">
+        <div className="flex items-center">
           {loginUser && (
-            <img
-              title={`${loginUser.displayName}`}
-              className="w-10 cursor-pointer rounded-full border"
-              src={
-                loginUser.photoURL ||
-                "https://img.icons8.com/?size=80&id=108639&format=png"
-              }
-              alt=""
-            />
+            <>
+              <button
+                className="my-anchor-element"
+                data-tooltip-id="my-tooltip"
+              >
+                <img
+                  className="w-10 cursor-pointer rounded-full border"
+                  src={
+                    loginUser?.photoURL ||
+                    "https://img.icons8.com/?size=80&id=108639&format=png"
+                  }
+                  alt=""
+                />
+              </button>
+              <Tooltip
+                id="my-tooltip"
+                place="top"
+                anchorSelect=".my-anchor-element"
+              >
+                <p>{loginUser?.displayName}</p>
+              </Tooltip>
+            </>
           )}
         </div>
 
@@ -121,14 +135,14 @@ const Navbar = () => {
           {loginUser ? (
             <NavLink
               onClick={handleLogout}
-              className={"btn hover:bg-green-700 hover:text-white"}
+              className={"btn hover:bg-indigo-700 hover:text-white"}
               to={"login"}
             >
               Logout
             </NavLink>
           ) : (
             <NavLink
-              className={"btn hover:bg-green-700 hover:text-white"}
+              className={"btn hover:bg-indigo-700 hover:text-white"}
               to={"login"}
             >
               Login

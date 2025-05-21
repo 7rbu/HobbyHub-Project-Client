@@ -208,7 +208,7 @@ const Update = () => {
               <hr className="my-8 border-gray-300" />
 
               <div className="text-center mb-6">
-                <h2 className="text-xl font-semibold text-indigo-600">
+                <h2 className="text-xl font-semibold text-indigo-700">
                   Your Details (Group Admin)
                 </h2>
               </div>
