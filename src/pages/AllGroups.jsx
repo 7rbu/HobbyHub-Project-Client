@@ -20,10 +20,10 @@ const AllGroups = () => {
             <thead className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white uppercase tracking-wider">
               <tr className="">
                 <th className="font-semibold px-1 py-3 lg:px-6 lg:py-4">
-                  Name
+                  Image
                 </th>
                 <th className="font-semibold px-1 py-3 lg:px-6 lg:py-4">
-                  Image
+                  Name
                 </th>
                 <th className="font-semibold px-1 py-3 lg:px-6 lg:py-4">
                   Category

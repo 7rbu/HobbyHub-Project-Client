@@ -46,15 +46,23 @@ const MyGroup = () => {
 
   return (
     <>
-      <div className="overflow-x-auto mt-10 px-4">
+      <div className="overflow-x-auto mt-10 lg:px-4">
         <div className="inline-block min-w-full shadow-lg rounded-xl overflow-hidden">
           <table className="min-w-full bg-white text-sm text-gray-700 text-center">
             <thead className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white uppercase tracking-wider">
               <tr>
-                <th className="px-6 py-4 font-semibold">Image</th>
-                <th className="px-6 py-4 font-semibold">Group Name</th>
-                <th className="px-6 py-4 font-semibold">Category</th>
-                <th className="px-6 py-4 font-semibold">Actions</th>
+                <th className="px-1 py-3 lg:px-6 lg:py-4 font-semibold">
+                  Image
+                </th>
+                <th className="px-1 py-3 lg:px-6 lg:py-4 font-semibold">
+                  Name
+                </th>
+                <th className="px-1 py-3 lg:px-6 lg:py-4 font-semibold">
+                  Category
+                </th>
+                <th className="px-1 py-3 lg:px-6 lg:py-4 font-semibold">
+                  Actions
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
@@ -63,7 +71,7 @@ const MyGroup = () => {
                   key={group._id}
                   className="hover:bg-gray-50 transition duration-150"
                 >
-                  <td className="px-6 py-4 flex justify-center">
+                  <td className="px-1 py-3 lg:px-6 lg:py-4 flex justify-center">
                     <div className="w-14 h-14">
                       <img
                         src={group.imageUrl}
@@ -72,16 +80,16 @@ const MyGroup = () => {
                       />
                     </div>
                   </td>
-                  <td className="px-6 py-4 font-medium text-gray-900">
+                  <td className="px-1 py-3 lg:px-6 lg:py-4 font-medium text-gray-900">
                     {group.groupName}
                   </td>
-                  <td className="px-6 py-4 text-gray-700">
+                  <td className="px-1 py-3 lg:px-6 lg:py-4 text-gray-700">
                     {group.hobbyCategory}
                   </td>
-                  <td className="px-6 py-4">
-                    <div className="flex justify-center gap-3">
+                  <td className="px-1 py-3 lg:px-6 lg:py-4">
+                    <div className="flex justify-center gap-1 lg:gap-3">
                       <Link to={`/mygroup/update/${group._id}`}>
-                        <button className="cursor-pointer flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all duration-200">
+                        <button className="cursor-pointer flex items-center gap-2 px-2 py-2 lg:px-4 lg:py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all duration-200">
                           <FaEdit className="text-white text-base" />
                           <span>Update</span>
                         </button>
@@ -89,7 +97,7 @@ const MyGroup = () => {
 
                       <button
                         onClick={() => handleDelete(group._id)}
-                        className="cursor-pointer flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-lg shadow-md hover:bg-red-600 hover:shadow-lg transition-all duration-200"
+                        className="cursor-pointer flex items-center gap-2 px-2 py-2 lg:px-4 lg:py-2 text-sm font-medium text-white bg-red-500 rounded-lg shadow-md hover:bg-red-600 hover:shadow-lg transition-all duration-200"
                       >
                         <FaTrashAlt className="text-white text-base" />
                         <span>Delete</span>
@@ -102,7 +110,7 @@ const MyGroup = () => {
                 <tr>
                   <td
                     colSpan="4"
-                    className="px-6 py-8 text-center text-gray-500"
+                    className="px-1 py-3 lg:px-6 lg:py-4 text-center text-gray-500"
                   >
                     No groups found.
                   </td>
