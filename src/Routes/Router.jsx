@@ -49,13 +49,23 @@ const router = createBrowserRouter([
       },
       {
         path: "allgroups/details/:id",
-        Component: Details,
+        element: (
+          <PrivetRoutes>
+            <Details></Details>
+          </PrivetRoutes>
+        ),
+
         loader: ({ params }) =>
           fetch(`https://papaya-server.vercel.app/creategroup/${params.id}`),
       },
       {
         path: "mygroup/update/:id",
-        Component: Update,
+        element: (
+          <PrivetRoutes>
+            <Update></Update>
+          </PrivetRoutes>
+        ),
+
         loader: ({ params }) =>
           fetch(`https://papaya-server.vercel.app/creategroup/${params.id}`),
       },

@@ -19,31 +19,41 @@ const MyGroup = () => {
       });
   }, [loginUser]);
 
-  console.log(group);
 
-  // const handleUpdate = (id) => {
-  //   console.log(id);
-  // };
 
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`https://papaya-server.vercel.app/creategroup/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount) {
-          const remainingData = group.filter((user) => user._id !== id);
-          setGroup(remainingData);
-        }
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Group Delete",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      });
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log(result.isConfirmed);
+        fetch(`https://papaya-server.vercel.app/creategroup/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              const remainingData = group.filter((user) => user._id !== id);
+              setGroup(remainingData);
+            }
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Group Delete",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          });
+      }
+    });
   };
 
   return (

@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router";
 import AuthContext from "../context/AuthContext";
 import LoadingSpinners from "./LoadingSpinners";
-// import "./styles.css";
 import Swal from "sweetalert2";
 import { Tooltip } from "react-tooltip";
+import Papaya from "../assets/Papaya.png";
 
 const Navbar = () => {
   const { loginUser, signOutUser, loading } = useContext(AuthContext);
@@ -67,7 +67,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar p-0">
+    <div className="navbar p-0 mt-2">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -95,7 +95,7 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to={"/"} className="btn btn-ghost text-xl p-0">
-          Papaya
+          <img className="w-[80px] lg:w-[100px]" src={Papaya} alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
