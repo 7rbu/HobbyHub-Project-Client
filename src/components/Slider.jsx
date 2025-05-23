@@ -88,7 +88,6 @@ const Slider = () => {
           </div>
         </div>
         <div className="border border-dashed border-gray-300 my-6"></div>
-
       </div>
     </>
   );

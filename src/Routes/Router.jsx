@@ -10,6 +10,7 @@ import PrivetRoutes from "./../PrivetRoutes/PrivetRoutes";
 import Update from "../pages/Update";
 import Details from "../pages/Details";
 import ErrorPages from "./../pages/ErrorPages";
+import LoadingSpinners from "../components/LoadingSpinners";
 
 const router = createBrowserRouter([
   {
@@ -25,11 +26,11 @@ const router = createBrowserRouter([
         Component: Home,
         loader: () =>
           fetch("https://papaya-server.vercel.app/creategroup/ontime"),
+        hydrateFallbackElement: <LoadingSpinners></LoadingSpinners>,
       },
       {
         path: "allgroups",
         Component: AllGroups,
-        loader: () => fetch("https://papaya-server.vercel.app/creategroup"),
       },
       {
         path: "creategroup",
@@ -57,6 +58,7 @@ const router = createBrowserRouter([
 
         loader: ({ params }) =>
           fetch(`https://papaya-server.vercel.app/creategroup/${params.id}`),
+        hydrateFallbackElement: <LoadingSpinners></LoadingSpinners>,
       },
       {
         path: "mygroup/update/:id",
@@ -68,6 +70,7 @@ const router = createBrowserRouter([
 
         loader: ({ params }) =>
           fetch(`https://papaya-server.vercel.app/creategroup/${params.id}`),
+        hydrateFallbackElement: <LoadingSpinners></LoadingSpinners>,
       },
       {
         path: "login",

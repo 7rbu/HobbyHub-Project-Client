@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router";
+import { Link } from "react-router";
+import LoadingSpinners from "../components/LoadingSpinners";
 
 const AllGroups = () => {
   const [allGroup, setAllGroup] = useState([]);
-
-  const group = useLoaderData();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setAllGroup(group);
-  }, [group]);
+    setLoading(true);
+    fetch("https://papaya-server.vercel.app/creategroup")
+      .then((res) => res.json())
+      .then((data) => {
+        setAllGroup(data);
+        setLoading(false);
+      });
+  }, []);
 
-  console.log(allGroup);
+  if (loading) {
+    return <LoadingSpinners />;
+  }
 
   return (
     <>
@@ -34,7 +42,7 @@ const AllGroups = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
-              {group?.map((group) => (
+              {allGroup?.map((group) => (
                 <tr
                   key={group._id}
                   className="hover:bg-gray-50 hover:scale-104 transition-all duration-800"
@@ -64,7 +72,7 @@ const AllGroups = () => {
                   </td>
                 </tr>
               ))}
-              {group.length === 0 && (
+              {allGroup.length === 0 && (
                 <tr>
                   <td
                     colSpan="4"

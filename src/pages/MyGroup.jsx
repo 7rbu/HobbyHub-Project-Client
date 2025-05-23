@@ -4,22 +4,26 @@ import Swal from "sweetalert2";
 import AuthContext from "../context/AuthContext";
 import { Link } from "react-router";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import LoadingSpinners from "./../components/LoadingSpinners";
 
 const MyGroup = () => {
   const { loginUser } = useContext(AuthContext);
   const [group, setGroup] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetch(
       `https://papaya-server.vercel.app/creategroup/mygroup/${loginUser?.email}`
     )
       .then((res) => res.json())
       .then((data) => {
         setGroup(data);
+        setLoading(false);
       });
   }, [loginUser]);
 
-
+ 
 
   const handleDelete = (id) => {
     console.log(id);
@@ -56,8 +60,14 @@ const MyGroup = () => {
     });
   };
 
+
+   if (loading) {
+    return <LoadingSpinners />;
+  }
+
   return (
     <>
+      {/* {loading ?  <LoadingSpinners/> } */}
       <div className="overflow-x-auto mt-10 lg:px-4">
         <div className="inline-block min-w-full shadow-lg rounded-xl overflow-hidden">
           <table className="min-w-full bg-white text-sm text-gray-700 text-center">

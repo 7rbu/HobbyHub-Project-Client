@@ -27,3 +27,15 @@
     background-color: #4338ca
 ;
 }
+
+.light {
+  background-color: white;
+  color: black;
+}
+.dark {
+  background-color: black;
+  color: white;
+}
+
+
+@custom-variant dark (&:where(.dark, .dark *));

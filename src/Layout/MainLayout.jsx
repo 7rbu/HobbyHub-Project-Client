@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
-import { Outlet } from "react-router";
+import React from "react";
+import { Outlet, useNavigate } from "react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { ThemeContext } from "../context/ThemeContext";
+import LoadingSpinners from "../components/LoadingSpinners";
 
 const MainLayout = () => {
-  const { theme } = useContext(ThemeContext);
+  const { state } = useNavigate();
   return (
-    <div className="min-h-screen flex flex-col" data-theme={theme || "light"}>
+    <div className="min-h-screen flex flex-col">
       <header>
         <div className="w-11/12 mx-auto">
           <Navbar></Navbar>
@@ -16,7 +16,7 @@ const MainLayout = () => {
 
       <main className="flex-1">
         <div className="w-11/12 mx-auto my-10">
-          <Outlet></Outlet>
+          {state === "loading" ? <LoadingSpinners /> : <Outlet></Outlet>}
         </div>
       </main>
 
