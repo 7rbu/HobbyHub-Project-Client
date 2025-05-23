@@ -37,7 +37,7 @@ const AllGroups = () => {
               {group?.map((group) => (
                 <tr
                   key={group._id}
-                  className="hover:bg-gray-50 transition duration-150"
+                  className="hover:bg-gray-50 hover:scale-104 transition-all duration-800"
                 >
                   <td className="flex justify-center px-1 py-3 lg:px-6 lg:py-4">
                     <div className="w-14 h-14">

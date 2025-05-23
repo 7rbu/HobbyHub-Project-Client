@@ -9,7 +9,7 @@ const CountUpCard = () => {
   return (
     <>
       <div className="w-full lg:w-11/12 mx-auto my-12">
-        <h1 className="text-indigo-700 text-center font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+        <h1 className="text-indigo-700 text-center font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl hover:scale-110 transition-all duration-800">
           Our Thriving Hobby Community
         </h1>
         <p className="text-center my-5 lg:w-2/5 mx-auto text-gray-400">

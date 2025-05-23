@@ -40,7 +40,7 @@ const CreateGroup = () => {
       <div className="max-w-2xl w-full bg-white shadow-xl rounded-lg p-6 sm:p-8 md:p-10">
         <div className="text-center mb-8">
           <Slide>
-            <h1 className="text-3xl sm:text-4xl font-bold text-indigo-700">
+            <h1 className="text-3xl sm:text-4xl font-bold text-indigo-700 hover:scale-110 transition-all duration-800">
               Create Your Hobby Hub
             </h1>
           </Slide>

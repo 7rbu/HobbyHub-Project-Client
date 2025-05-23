@@ -81,7 +81,7 @@ const MyGroup = () => {
               {group?.map((group) => (
                 <tr
                   key={group._id}
-                  className="hover:bg-gray-50 transition duration-150"
+                  className="hover:bg-gray-50 hover:scale-104 transition-all duration-800"
                 >
                   <td className="px-1 py-3 lg:px-6 lg:py-4 flex justify-center">
                     <div className="w-14 h-14">

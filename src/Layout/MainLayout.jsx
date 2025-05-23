@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Outlet } from "react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { ThemeContext } from "../context/ThemeContext";
 
 const MainLayout = () => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" data-theme={theme || "light"}>
       <header>
         <div className="w-11/12 mx-auto">
           <Navbar></Navbar>

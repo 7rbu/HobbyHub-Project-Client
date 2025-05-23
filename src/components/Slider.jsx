@@ -22,9 +22,9 @@ const Slider = () => {
   return (
     <>
       <div className="md:w-11/12 mx-auto">
-        <div className="reviews-carousel my-12">
-          <h2 className="text-indigo-700 text-center font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl my-6">
-           See What Everyone’s Up To!
+        <div className="reviews-carousel">
+          <h2 className="text-indigo-700 text-center font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl my-6 hover:scale-110 transition-all duration-800">
+            See What Everyone’s Up To!
           </h2>
 
           <Swiper
@@ -62,7 +62,7 @@ const Slider = () => {
             <SwiperSlide>
               <div className="w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-xl group">
                 <img
-                  src="https://images.unsplash.com/photo-1495837174058-628aafc7d610?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJpZW5kcyUyMGhhdmluZyUyMGZ1bnxlbnwwfHwwfHx8MA%3D%3D"
+                  src="https://rusentinel.com/wp-content/uploads/2018/03/campuslife_hero-900x446.jpg"
                   alt="Enter to Win"
                   className="w-full h-full hover:bg-black/60 object-cover transition-transform duration-500 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-black"
                 />
@@ -71,7 +71,7 @@ const Slider = () => {
             <SwiperSlide>
               <div className="w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-xl group">
                 <img
-                  src="https://images.pexels.com/photos/1222949/pexels-photo-1222949.jpeg?cs=srgb&dl=pexels-minan1398-1222949.jpg&fm=jpg"
+                  src="https://uneveip.wordpress.com/wp-content/uploads/2017/12/36712-social-college.1200w.tn_.jpg"
                   alt="Enter to Win"
                   className="w-full h-full hover:bg-black/60 object-cover transition-transform duration-500 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-black"
                 />
@@ -87,8 +87,8 @@ const Slider = () => {
             </div>
           </div>
         </div>
+        <div className="border border-dashed border-gray-300 my-6"></div>
 
-        <div className="border border-dashed border-gray-300"></div>
       </div>
     </>
   );
