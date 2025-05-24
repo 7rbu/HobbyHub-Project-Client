@@ -5,7 +5,6 @@ import LoadingSpinners from "./LoadingSpinners";
 import Swal from "sweetalert2";
 import { Tooltip } from "react-tooltip";
 import Papaya from "../assets/Papaya.png";
-import Theme from "./Theme";
 
 const Navbar = () => {
   const { loginUser, signOutUser, loading } = useContext(AuthContext);
@@ -68,7 +67,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar p-0 mt-2">
+    <div className="navbar p-0 mt-2 dark:bg-gray-900 rounded-xl px-10 py-3">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -105,7 +104,6 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-3">
-        <Theme></Theme>
         <div className="flex items-center">
           {loginUser && (
             <>

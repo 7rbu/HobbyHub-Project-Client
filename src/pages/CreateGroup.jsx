@@ -35,7 +35,7 @@ const CreateGroup = () => {
 
   return (
     <div className="min-h-screen  py-8 px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center">
-      <div className="max-w-2xl w-full bg-white shadow-xl rounded-lg p-6 sm:p-8 md:p-10">
+      <div className="max-w-2xl w-full bg-white shadow-xl rounded-lg p-6 sm:p-8 md:p-10 bg-white dark:bg-gray-900">
         <div className="text-center mb-8">
           <Slide>
             <h1 className="text-3xl sm:text-4xl font-bold text-indigo-700 hover:scale-110 transition-all duration-800">
@@ -55,7 +55,7 @@ const CreateGroup = () => {
             <div>
               <label
                 htmlFor="groupName"
-                className="block text-sm font-semibold text-gray-800 mb-1"
+                className="block text-sm font-semibold text-gray-800 dark:text-gray-300 mb-1"
               >
                 Group Name
               </label>
@@ -72,7 +72,7 @@ const CreateGroup = () => {
             <div>
               <label
                 htmlFor="hobbyCategory"
-                className="block text-sm font-semibold text-gray-800 mb-1"
+                className="block text-sm font-semibold text-gray-800 dark:text-gray-300 mb-1"
               >
                 Hobby Category
               </label>
@@ -81,7 +81,7 @@ const CreateGroup = () => {
                 name="hobbyCategory"
                 required
                 defaultValue=""
-                className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out bg-white"
+                className="mt-1 w-full px-4 py-3 border border-gray-300 bg-white dark:bg-gray-900 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out bg-white"
               >
                 <option value="" disabled selected>
                   Select a category
@@ -99,7 +99,7 @@ const CreateGroup = () => {
             <div>
               <label
                 htmlFor="description"
-                className="block text-sm font-semibold text-gray-800 mb-1"
+                className="block text-sm font-semibold text-gray-800 dark:text-gray-300 mb-1"
               >
                 Description
               </label>
@@ -115,7 +115,7 @@ const CreateGroup = () => {
             <div>
               <label
                 htmlFor="meetingLocation"
-                className="block text-sm font-semibold text-gray-800 mb-1"
+                className="block text-sm font-semibold text-gray-800 dark:text-gray-300 mb-1"
               >
                 Meeting Location
               </label>
@@ -133,7 +133,7 @@ const CreateGroup = () => {
               <div>
                 <label
                   htmlFor="maxMembers"
-                  className="block text-sm font-semibold text-gray-800 mb-1"
+                  className="block text-sm font-semibold text-gray-800 dark:text-gray-300 mb-1"
                 >
                   Max Members
                 </label>
@@ -150,7 +150,7 @@ const CreateGroup = () => {
               <div>
                 <label
                   htmlFor="startDate"
-                  className="block text-sm font-semibold text-gray-800 mb-1"
+                  className="block text-sm font-semibold text-gray-800 dark:text-gray-300 mb-1"
                 >
                   Estimated Start Date
                 </label>
@@ -166,7 +166,7 @@ const CreateGroup = () => {
             <div>
               <label
                 htmlFor="imageUrl"
-                className="block text-sm font-semibold text-gray-800 mb-1"
+                className="block text-sm font-semibold text-gray-800 dark:text-gray-300 mb-1"
               >
                 Group Image URL
               </label>
@@ -191,7 +191,7 @@ const CreateGroup = () => {
             <div>
               <label
                 htmlFor="userName"
-                className="block text-sm font-semibold text-gray-800 mb-1"
+                className="block text-sm font-semibold text-gray-800 dark:text-gray-300 mb-1"
               >
                 Your Name
               </label>
@@ -210,7 +210,7 @@ const CreateGroup = () => {
             <div>
               <label
                 htmlFor="userEmail"
-                className="block text-sm font-semibold text-gray-800 mb-1"
+                className="block text-sm font-semibold text-gray-800 dark:text-gray-300 mb-1"
               >
                 Your Email
               </label>

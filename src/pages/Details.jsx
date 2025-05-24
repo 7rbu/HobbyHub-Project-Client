@@ -45,7 +45,11 @@ const Details = () => {
   return (
     <>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
-        <div className="bg-gradient-to-br from-white via-gray-100 to-indigo-100 border border-gray-200 shadow-xl rounded-2xl p-6 sm:p-10">
+        <div
+          className="bg-gradient-to-br from-white via-gray-100 to-indigo-100 
+        dark:from-gray-800 dark:via-gray-900 dark:to-black dark:border-gray-700 
+        border border-gray-200 shadow-xl rounded-2xl p-6 sm:p-10"
+        >
           <div className="flex flex-col items-center text-center">
             <img
               src={imageUrl}
@@ -54,10 +58,10 @@ const Details = () => {
             <h1 className="text-2xl sm:text-3xl font-semibold text-indigo-700 mt-4">
               {groupName}
             </h1>
-            <p className="text-sm sm:text-base text-gray-500 mt-1 italic">
+            <p className="text-sm sm:text-base text-gray-500 dark:text-gray-300 mt-1 italic">
               {hobbyCategory}
             </p>
-            <p className="mt-4 text-base sm:text-lg text-gray-700 max-w-3xl leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-gray-700 dark:text-gray-500 max-w-3xl leading-relaxed">
               {description}
             </p>
           </div>
@@ -66,26 +70,34 @@ const Details = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12 text-sm sm:text-base text-gray-700">
             <div className="text-center sm:text-left">
-              <p className="font-semibold text-gray-800 mb-1">
+              <p className="font-semibold text-gray-800 dark:text-gray-300 mb-1">
                 Meeting Location
               </p>
-              <p>{meetingLocation}</p>
+              <p className="dark:text-gray-400">{meetingLocation}</p>
             </div>
             <div className="text-center sm:text-left">
-              <p className="font-semibold text-gray-800 mb-1">Start Date</p>
-              <p>{startDate}</p>
+              <p className="font-semibold text-gray-800 dark:text-gray-300 mb-1">
+                Start Date
+              </p>
+              <p className="dark:text-gray-400">{startDate}</p>
             </div>
             <div className="text-center sm:text-left">
-              <p className="font-semibold text-gray-800 mb-1">Max Members</p>
-              <p>{maxMembers}</p>
+              <p className="font-semibold text-gray-800 dark:text-gray-300 mb-1">
+                Max Members
+              </p>
+              <p className="dark:text-gray-400">{maxMembers}</p>
             </div>
             <div className="text-center sm:text-left">
-              <p className="font-semibold text-gray-800 mb-1">Organizer</p>
-              <p>{userName}</p>
+              <p className="font-semibold text-gray-800 dark:text-gray-300 mb-1">
+                Organizer
+              </p>
+              <p className="dark:text-gray-400">{userName}</p>
             </div>
             <div className="text-center sm:text-left sm:col-span-2">
-              <p className="font-semibold text-gray-800 mb-1">Contact Email</p>
-              <p>{userEmail}</p>
+              <p className="font-semibold text-gray-800 dark:text-gray-300 mb-1">
+                Contact Email
+              </p>
+              <p className="dark:text-gray-400">{userEmail}</p>
             </div>
           </div>
           <div className="mt-10 flex justify-center">

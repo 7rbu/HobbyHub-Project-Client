@@ -45,7 +45,7 @@ const AllGroups = () => {
               {allGroup?.map((group) => (
                 <tr
                   key={group._id}
-                  className="hover:bg-gray-50 hover:scale-104 transition-all duration-800"
+                  className="bg-white dark:bg-gray-900 dark:border-0 hover:dark:bg-gray-800 hover:bg-gray-50 hover:scale-104 transition-all duration-800"
                 >
                   <td className="flex justify-center px-1 py-3 lg:px-6 lg:py-4">
                     <div className="w-14 h-14">
@@ -55,10 +55,10 @@ const AllGroups = () => {
                       />
                     </div>
                   </td>
-                  <td className="font-medium text-gray-900 px-1 py-3 lg:px-6 lg:py-4">
+                  <td className="font-medium text-gray-900 dark:text-gray-300 px-1 py-3 lg:px-6 lg:py-4">
                     {group.groupName}
                   </td>
-                  <td className=" text-gray-700 px-1 py-3 lg:px-6 lg:py-4">
+                  <td className=" text-gray-700 dark:text-gray-300 px-1 py-3 lg:px-6 lg:py-4">
                     {group.hobbyCategory}
                   </td>
                   <td className="px-1 py-3 lg:px-6 lg:py-4">

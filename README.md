@@ -1,12 +1,60 @@
-# React + Vite
+Assignment-10_category_Papaya
+🎯 HobbyHub – Local Hobby Group Organizer
+🔗 Live Demo: https://assignment-papaya.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📌 Overview
+HobbyHub is a platform where users can discover, join, and create hobby-based groups. It helps people connect over shared interests like art, reading, cooking, and more — all in one organized, user-friendly space.
 
-Currently, two official plugins are available:
+🌟 Key Features
+🏠 Home Page
+Hero slider
+6 featured groups of the day
+CountUp statistics
+“Why People Love HobbyHub” section
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📂 All Groups
+Browse all user-created groups
+Publicly accessible
 
-## Expanding the ESLint configuration
+➕ Create Group (Private)
+Create a group with full details (hobby type, meeting location, etc.)
+User name/email auto-filled from Firebase
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+👤 My Groups (Private)
+View groups created by the logged-in user
+🔍 Details Page (Private)
+Full group information
+
+Join Group button
+✅ If start date is in the future → show "Join Successful" (Toast alert)
+❌ If the group has expired → show "Group no longer active"
+🌗 Dark & Light Mode
+Toggle between themes using Tailwind + DaisyUI
+
+🔐 Route Access
+Route Access
+/ (Home) Public
+/all-group Public
+/create Private
+/my-group Private
+/details/:id Private
+
+🔒 Private routes require user to be logged in via Firebase Auth.
+
+🧰 Tech Stack
+Frontend: React, Tailwind CSS, DaisyUI
+Routing: React Router
+Authentication: Firebase
+Database: MongoDB (via backend)
+UI Enhancements:
+Swiper, SweetAlert2, React CountUp, React Tooltip, React Spinners, React Icons, React Awesome Reveal
+Date Handling: date-fns
+
+
+✅ Highlights
+Fully responsive & mobile-first design
+Dark/Light mode support
+Real-time user interaction
+Clean and reusable components
+Full CRUD functionality
+Seamless Firebase + MongoDB integration

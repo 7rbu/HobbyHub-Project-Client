@@ -23,8 +23,6 @@ const MyGroup = () => {
       });
   }, [loginUser]);
 
- 
-
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -36,7 +34,6 @@ const MyGroup = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-      
         fetch(`https://papaya-server.vercel.app/creategroup/${id}`, {
           method: "DELETE",
         })
@@ -58,14 +55,12 @@ const MyGroup = () => {
     });
   };
 
-
-   if (loading) {
+  if (loading) {
     return <LoadingSpinners />;
   }
 
   return (
     <>
-      {/* {loading ?  <LoadingSpinners/> } */}
       <div className="overflow-x-auto mt-10 lg:px-4">
         <div className="inline-block min-w-full shadow-lg rounded-xl overflow-hidden">
           <table className="min-w-full bg-white text-sm text-gray-700 text-center">
@@ -89,7 +84,7 @@ const MyGroup = () => {
               {group?.map((group) => (
                 <tr
                   key={group._id}
-                  className="hover:bg-gray-50 hover:scale-104 transition-all duration-800"
+                  className="bg-white dark:bg-gray-900 dark:border-0 hover:dark:bg-gray-800 hover:bg-gray-50 hover:scale-104 transition-all duration-800"
                 >
                   <td className="px-1 py-3 lg:px-6 lg:py-4 flex justify-center">
                     <div className="w-14 h-14">
@@ -100,10 +95,10 @@ const MyGroup = () => {
                       />
                     </div>
                   </td>
-                  <td className="px-1 py-3 lg:px-6 lg:py-4 font-medium text-gray-900">
+                  <td className="px-1 py-3 lg:px-6 lg:py-4 dark:text-gray-300 font-medium text-gray-900">
                     {group.groupName}
                   </td>
-                  <td className="px-1 py-3 lg:px-6 lg:py-4 text-gray-700">
+                  <td className="px-1 py-3 lg:px-6 lg:py-4 dark:text-gray-300 text-gray-700">
                     {group.hobbyCategory}
                   </td>
                   <td className="px-1 py-3 lg:px-6 lg:py-4">
