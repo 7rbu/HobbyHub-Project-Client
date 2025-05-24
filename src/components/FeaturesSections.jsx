@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from "react";
+import LoadingSpinners from "./LoadingSpinners";
 
 const FeaturesSections = () => {
   const [features, setFeatures] = useState();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("/features.json")
+    fetch("https://papaya-server.vercel.app/featuresdata")
       .then((res) => res.json())
       .then((data) => {
         setFeatures(data);
+        setLoading(false);
       });
-  }, []);
+  }, [setFeatures]);
 
-  // useEffect(() => {
-  //   fetch("")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setFeatures(data);
-  //     });
-  // }, []);
+  if (loading) {
+    return <LoadingSpinners />;
+  }
 
   return (
     <>
