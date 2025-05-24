@@ -87,9 +87,9 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 px-4 py-8">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
-        <h2 className="text-center text-3xl font-extrabold text-gray-800 mb-6">
+    <div className="min-h-screen flex items-center justify-center px-4 py-8">
+      <div className="w-full max-w-md rounded-2xl shadow-xl p-8 bg-white dark:bg-gray-900">
+        <h2 className="text-center text-3xl font-extrabold text-indigo-800 mb-6">
           Create an account
         </h2>
 
@@ -97,7 +97,7 @@ export default function RegisterPage() {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-semibold text-gray-700"
+              className="block text-sm font-semibold text-gray-700 dark:text-gray-300"
             >
               Full Name
             </label>
@@ -113,7 +113,7 @@ export default function RegisterPage() {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-semibold text-gray-700"
+              className="block text-sm font-semibold text-gray-700 dark:text-gray-300"
             >
               Photo
             </label>
@@ -130,7 +130,7 @@ export default function RegisterPage() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-semibold text-gray-700"
+              className="block text-sm font-semibold text-gray-700 dark:text-gray-300"
             >
               Email address
             </label>
@@ -147,7 +147,7 @@ export default function RegisterPage() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-semibold text-gray-700"
+              className="block text-sm font-semibold text-gray-700 dark:text-gray-300"
             >
               Password
             </label>
@@ -171,7 +171,7 @@ export default function RegisterPage() {
 
         <div className="my-6 flex items-center gap-2">
           <div className="flex-grow h-px bg-gray-300" />
-          <span className="text-sm text-gray-500">Or sign up with</span>
+          <span className="text-sm text-gray-500 dark:text-gray-500">Or sign up with</span>
           <div className="flex-grow h-px bg-gray-300" />
         </div>
 
@@ -196,7 +196,7 @@ export default function RegisterPage() {
             <span className="font-medium text-sm">GitHub</span>
           </button>
         </div>
-        <p className="mt-6 text-center text-sm text-gray-600">
+        <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
           Already have an account?{" "}
           <Link
             to="/login"
