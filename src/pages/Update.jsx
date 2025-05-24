@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLoaderData } from "react-router";
 import ErrorPages from "./ErrorPages";
 import Swal from "sweetalert2";
@@ -6,6 +6,10 @@ import { Fade, Slide } from "react-awesome-reveal";
 
 const Update = () => {
   const updateGroupData = useLoaderData();
+
+  useEffect(() => {
+    document.title = "Update Page";
+  }, []);
 
   if (updateGroupData === "error") {
     return <ErrorPages></ErrorPages>;

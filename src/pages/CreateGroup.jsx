@@ -1,10 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import AuthContext from "../context/AuthContext";
 import Swal from "sweetalert2";
 import { Fade, Slide } from "react-awesome-reveal";
 
 const CreateGroup = () => {
   const { loginUser } = useContext(AuthContext);
+
+  useEffect(() => {
+    document.title = "Create Groups";
+  }, []);
 
   const handleGroupData = (e) => {
     e.preventDefault();

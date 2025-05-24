@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "../components/Slider";
 import { useLoaderData } from "react-router";
 import FeaturedGroup from "../components/FeaturedGroup";
@@ -8,6 +8,10 @@ import Theme from "./../components/Theme";
 
 const Home = () => {
   const featuredGroupData = useLoaderData();
+
+  useEffect(() => {
+    document.title = "Home";
+  }, []);
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router";
 import AuthContext from "../context/AuthContext";
 import Swal from "sweetalert2";
@@ -9,6 +9,10 @@ export default function RegisterPage() {
 
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Register Page";
+  }, []);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -171,7 +175,9 @@ export default function RegisterPage() {
 
         <div className="my-6 flex items-center gap-2">
           <div className="flex-grow h-px bg-gray-300" />
-          <span className="text-sm text-gray-500 dark:text-gray-500">Or sign up with</span>
+          <span className="text-sm text-gray-500 dark:text-gray-500">
+            Or sign up with
+          </span>
           <div className="flex-grow h-px bg-gray-300" />
         </div>
 

@@ -3,19 +3,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-/* @plugin "daisyui" {
-     themes: light --default;
-     themes: light --default, dark --prefersdark;
-} */
-
-
-
-
-/* @plugin "daisyui/theme" {
-    name: "light";
-    default: true;
-  } */
-
 
   *{
     font-family: "Poppins", sans-serif;

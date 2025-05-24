@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { format } from "date-fns";
 import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
@@ -6,6 +6,11 @@ import ErrorPages from "./ErrorPages";
 
 const Details = () => {
   const groupData = useLoaderData();
+
+    useEffect(() => {
+      document.title = "Groups Details";
+    }, []);
+
   if (groupData === "error") {
     return <ErrorPages></ErrorPages>;
   }

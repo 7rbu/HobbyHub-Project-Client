@@ -7,6 +7,10 @@ const AllGroups = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    document.title = "All Groups";
+  }, []);
+
+  useEffect(() => {
     setLoading(true);
     fetch("https://papaya-server.vercel.app/creategroup")
       .then((res) => res.json())

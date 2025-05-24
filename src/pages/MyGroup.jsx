@@ -12,6 +12,10 @@ const MyGroup = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    document.title = "My Group";
+  }, []);
+
+  useEffect(() => {
     setLoading(true);
     fetch(
       `https://papaya-server.vercel.app/creategroup/mygroup/${loginUser?.email}`
