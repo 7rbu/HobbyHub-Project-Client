@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const FeaturesSections = () => {
   const [features, setFeatures] = useState();
 
-  fetch("/features.json")
-    .then((res) => res.json())
-    .then((data) => {
-      setFeatures(data);
-    });
+  useEffect(() => {
+    fetch("/features.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setFeatures(data);
+      });
+  }, []);
 
   // useEffect(() => {
   //   fetch("")
@@ -27,13 +29,13 @@ const FeaturesSections = () => {
           {features?.map(({ icon, title, description }) => (
             <div
               key={title}
-              className="bg-white rounded-lg shadow-md p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300"
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300"
             >
               <div className="text-6xl mb-6">{icon}</div>
-              <h3 className="text-xl font-semibold mb-3 text-indigo-700">
+              <h3 className="text-xl font-semibold mb-3 text-indigo-700 dark:text-gray-300">
                 {title}
               </h3>
-              <p className="text-gray-600">{description}</p>
+              <p className="text-gray-600 dark:text-gray-500">{description}</p>
             </div>
           ))}
         </div>

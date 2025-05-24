@@ -17,8 +17,8 @@ const FeaturedGroup = ({ group }) => {
 
   return (
     <>
-      <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-        <div className="flex items-center justify-center bg-indigo-50 p-8">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+        <div className="flex items-center justify-center bg-indigo-50 dark:bg-gray-700 p-8">
           <img
             src={imageUrl}
             className="w-24 h-24 object-contain rounded-full border border-indigo-300"
@@ -26,10 +26,12 @@ const FeaturedGroup = ({ group }) => {
         </div>
 
         <div className="p-6">
-          <h2 className="text-xl font-bold text-gray-900">{groupName}</h2>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-gray-300">
+            {groupName}
+          </h2>
           <p className="text-indigo-600 font-semibold mt-1">{hobbyCategory}</p>
 
-          <div className="mt-4 text-gray-700 text-sm">
+          <div className="mt-4 text-gray-700 dark:text-gray-300 text-sm">
             <p>
               <strong>Meeting Location:</strong> {meetingLocation}
             </p>

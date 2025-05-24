@@ -20,6 +20,9 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
+        loader: () =>
+          fetch("https://papaya-server.vercel.app/creategroup/ontime"),
+        hydrateFallbackElement: <LoadingSpinners></LoadingSpinners>,  
       },
       {
         path: "home",

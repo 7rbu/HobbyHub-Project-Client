@@ -8,6 +8,7 @@ import FeaturesSections from "../components/FeaturesSections";
 
 const Home = () => {
   const featuredGroupData = useLoaderData();
+  console.log(featuredGroupData);
 
   return (
     <div>

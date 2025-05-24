@@ -26,7 +26,14 @@ const CountUpCard = () => {
             enableScrollSpy={true}
           >
             {({ countUpRef }) => (
-              <div className="bg-gradient-to-br from-white/80 to-indigo-50 backdrop-blur-md border border-gray-100 shadow-md hover:shadow-xl px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer">
+              <div
+                className="bg-gradient-to-br from-white/80 to-indigo-50 
+              
+              dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900
+
+              
+              backdrop-blur-md  border border-gray-100 shadow-md hover:shadow-xl px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer"
+              >
                 <img className="mb-3" />
                 <span
                   ref={countUpRef}
@@ -36,13 +43,13 @@ const CountUpCard = () => {
                   +
                 </span>
                 <div className="text-[#0F0F0F] opacity-60 lg:text-xl font-medium mt-3">
-                  <div className="mb-6 mt-6 w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center group-hover:bg-indigo-200 transition-colors duration-500">
+                  <div className="mb-6 mt-6 w-16 h-16 rounded-full bg-indigo-100 dark:bg-gray-900 flex items-center justify-center group-hover:bg-indigo-200 transition-colors duration-500">
                     <BiUserCircle
                       className="text-indigo-600 group-hover:text-indigo-700"
                       size={32}
                     />
                   </div>
-                  <div className="text-gray-700 text-lg md:text-xl font-semibold leading-snug">
+                  <div className="text-gray-700 dark:text-gray-200 text-lg md:text-xl font-semibold leading-snug">
                     Active Users Now
                   </div>
                 </div>
@@ -59,7 +66,11 @@ const CountUpCard = () => {
             enableScrollSpy={true}
           >
             {({ countUpRef }) => (
-              <div className="bg-gradient-to-br from-white/80 to-indigo-50 backdrop-blur-md border border-gray-100 shadow-md hover:shadow-xl px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer">
+              <div
+                className="bg-gradient-to-br from-white/80 to-indigo-50
+               dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900
+              backdrop-blur-md border border-gray-100 shadow-md hover:shadow-xl px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer"
+              >
                 <img className="mb-3" />
                 <span
                   ref={countUpRef}
@@ -69,13 +80,13 @@ const CountUpCard = () => {
                   +
                 </span>
                 <div className="text-[#0F0F0F] opacity-60 lg:text-xl font-medium">
-                  <div className="mb-6 mt-6 w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center group-hover:bg-indigo-200 transition-colors duration-500">
+                  <div className="mb-6 mt-6 w-16 h-16 rounded-full bg-indigo-100 dark:bg-gray-900 flex items-center justify-center group-hover:bg-indigo-200 transition-colors duration-500">
                     <IoMdAddCircleOutline
                       className="text-indigo-600 group-hover:text-indigo-700"
                       size={32}
                     />
                   </div>
-                  <div className="text-gray-700 text-lg md:text-xl font-semibold leading-snug">
+                  <div className="text-gray-700 dark:text-gray-200 text-lg md:text-xl font-semibold leading-snug">
                     Daily Groups Created
                   </div>
                 </div>
@@ -92,7 +103,11 @@ const CountUpCard = () => {
             enableScrollSpy={true}
           >
             {({ countUpRef }) => (
-              <div className="bg-gradient-to-br from-white/80 to-indigo-50 backdrop-blur-md border border-gray-100 shadow-md hover:shadow-xl px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer">
+              <div
+                className="bg-gradient-to-br from-white/80 to-indigo-50
+               dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900
+              backdrop-blur-md border border-gray-100 shadow-md hover:shadow-xl px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer"
+              >
                 <img className="mb-3" />
                 <span
                   ref={countUpRef}
@@ -102,13 +117,13 @@ const CountUpCard = () => {
                   +
                 </span>
                 <div className="text-[#0F0F0F] opacity-60 lg:text-xl font-medium mt-3">
-                  <div className="mb-6 mt-6 w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center group-hover:bg-indigo-200 transition-colors duration-500">
+                  <div className="mb-6 mt-6 w-16 h-16 rounded-full bg-indigo-100 dark:bg-gray-900 flex items-center justify-center group-hover:bg-indigo-200 transition-colors duration-500">
                     <FaUserFriends
                       className="text-indigo-600 group-hover:text-indigo-700"
                       size={32}
                     />
                   </div>
-                  <div className="text-gray-700 text-lg md:text-xl font-semibold leading-snug">
+                  <div className="text-gray-700 dark:text-gray-200 text-lg md:text-xl font-semibold leading-snug">
                     Total Group Joins
                   </div>
                 </div>
@@ -125,7 +140,11 @@ const CountUpCard = () => {
             enableScrollSpy={true}
           >
             {({ countUpRef }) => (
-              <div className="bg-gradient-to-br from-white/80 to-indigo-50 backdrop-blur-md border border-gray-100 shadow-md hover:shadow-xl px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer">
+              <div
+                className="bg-gradient-to-br from-white/80 to-indigo-50
+               dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900
+              backdrop-blur-md border border-gray-100 shadow-md hover:shadow-xl px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer"
+              >
                 <img className="mb-3" />
                 <span
                   ref={countUpRef}
@@ -135,13 +154,13 @@ const CountUpCard = () => {
                   +
                 </span>
                 <div className="text-[#0F0F0F] opacity-60 lg:text-xl font-medium mt-3">
-                  <div className="mb-6 mt-6 w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center group-hover:bg-indigo-200 transition-colors duration-500">
+                  <div className="mb-6 mt-6 w-16 h-16 rounded-full bg-indigo-100 dark:bg-gray-900 flex items-center justify-center group-hover:bg-indigo-200 transition-colors duration-500">
                     <TbWorldUpload
                       className="text-indigo-600 group-hover:text-indigo-700"
                       size={32}
                     />
                   </div>
-                  <p className="text-gray-700 text-lg md:text-xl font-semibold leading-snug">
+                  <p className="text-gray-700 dark:text-gray-200 text-lg md:text-xl font-semibold leading-snug">
                     Total Group Published
                   </p>
                 </div>
