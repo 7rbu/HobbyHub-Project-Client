@@ -11,7 +11,6 @@ const Update = () => {
     return <ErrorPages></ErrorPages>;
   }
 
-  console.log(updateGroupData);
   const {
     _id,
     groupName,
@@ -31,7 +30,6 @@ const Update = () => {
 
     const formData = new FormData(form);
     const groupData = Object.fromEntries(formData.entries());
-    console.log(groupData);
 
     fetch(`https://papaya-server.vercel.app/creategroup/${_id}`, {
       method: "put",
@@ -41,8 +39,7 @@ const Update = () => {
       body: JSON.stringify(groupData),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
         Swal.fire({
           position: "center",
           icon: "success",

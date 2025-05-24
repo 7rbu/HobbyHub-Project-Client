@@ -87,7 +87,7 @@ const Slider = () => {
             </div>
           </div>
         </div>
-        <div className="border border-dashed border-gray-300 my-6"></div>
+        <div className="border border-dashed border-gray-200 dark:border-gray-700 my-6"></div>
       </div>
     </>
   );

@@ -26,8 +26,6 @@ const MyGroup = () => {
  
 
   const handleDelete = (id) => {
-    console.log(id);
-
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -38,7 +36,7 @@ const MyGroup = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        console.log(result.isConfirmed);
+      
         fetch(`https://papaya-server.vercel.app/creategroup/${id}`, {
           method: "DELETE",
         })

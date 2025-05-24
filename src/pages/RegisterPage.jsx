@@ -30,7 +30,7 @@ export default function RegisterPage() {
     }
 
     createUser(email, password)
-      .then((result) => {
+      .then(() => {
         Swal.fire({
           title: "🎉 Registration Successful!",
           text: "Registration successful. Let's get started!",
@@ -38,15 +38,12 @@ export default function RegisterPage() {
           draggable: true,
         });
         setLoading(false);
-        console.log(result);
 
         profileUpdate({ displayName: displayName, photoURL: photoURL })
           .then(() => {
             navigate(`${location.state ? location.state : "/"}`);
           })
-          .catch((error) => {
-            console.log(error);
-          });
+          .catch(() => {});
 
         fetch("https://papaya-server.vercel.app/register", {
           method: "POST",
@@ -54,13 +51,9 @@ export default function RegisterPage() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(userData),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-          });
+        });
       })
-      .catch((error) => {
+      .catch(() => {
         Swal.fire({
           title: "❌ Registration Failed",
           text: "Something went wrong. Please try again.",
@@ -68,14 +61,13 @@ export default function RegisterPage() {
           draggable: true,
         });
         setLoading(false);
-        console.log(error);
         return;
       });
   };
 
   const handleGoogleSignUp = () => {
     signInWithGoogle()
-      .then((result) => {
+      .then(() => {
         Swal.fire({
           title: "🎉 Registration Successful!",
           text: "Registration successful. Let's get started!",
@@ -84,15 +76,13 @@ export default function RegisterPage() {
         });
         setLoading(false);
         navigate(`${location.state ? location.state : "/"}`);
-        console.log(result);
       })
-      .catch((error) => {
+      .catch(() => {
         Swal.fire({
           title: "🎉 Sign in with Google failed",
           icon: "error",
           draggable: true,
         });
-        console.log(error);
       });
   };
 

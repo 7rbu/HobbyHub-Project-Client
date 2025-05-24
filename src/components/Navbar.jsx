@@ -5,6 +5,7 @@ import LoadingSpinners from "./LoadingSpinners";
 import Swal from "sweetalert2";
 import { Tooltip } from "react-tooltip";
 import Papaya from "../assets/Papaya.png";
+import Theme from "./Theme";
 
 const Navbar = () => {
   const { loginUser, signOutUser, loading } = useContext(AuthContext);
@@ -104,6 +105,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-3">
+        <Theme></Theme>
         <div className="flex items-center">
           {loginUser && (
             <>

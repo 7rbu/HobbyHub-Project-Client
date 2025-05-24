@@ -28,11 +28,9 @@ const CountUpCard = () => {
             {({ countUpRef }) => (
               <div
                 className="bg-gradient-to-br from-white/80 to-indigo-50 
-              
               dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900
-
-              
-              backdrop-blur-md  border border-gray-100 shadow-md hover:shadow-xl px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer"
+              backdrop-blur-md  border border-gray-100 dark:border-gray-300 dark:border-dashed shadow-md hover:shadow-xl
+              px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer"
               >
                 <img className="mb-3" />
                 <span
@@ -69,7 +67,8 @@ const CountUpCard = () => {
               <div
                 className="bg-gradient-to-br from-white/80 to-indigo-50
                dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900
-              backdrop-blur-md border border-gray-100 shadow-md hover:shadow-xl px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer"
+              backdrop-blur-md border border-gray-100 dark:border-gray-300 dark:border-dashed shadow-md hover:shadow-xl
+              px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer"
               >
                 <img className="mb-3" />
                 <span
@@ -106,7 +105,8 @@ const CountUpCard = () => {
               <div
                 className="bg-gradient-to-br from-white/80 to-indigo-50
                dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900
-              backdrop-blur-md border border-gray-100 shadow-md hover:shadow-xl px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer"
+              backdrop-blur-md border border-gray-100 dark:border-gray-300 dark:border-dashed shadow-md hover:shadow-xl
+              px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer"
               >
                 <img className="mb-3" />
                 <span
@@ -143,7 +143,8 @@ const CountUpCard = () => {
               <div
                 className="bg-gradient-to-br from-white/80 to-indigo-50
                dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900
-              backdrop-blur-md border border-gray-100 shadow-md hover:shadow-xl px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer"
+              backdrop-blur-md border border-gray-100 dark:border-gray-300 dark:border-dashed shadow-md hover:shadow-xl
+              px-8 py-10 rounded-3xl hover:scale-105 hover:border-indigo-500 transition-all duration-700 cursor-pointer"
               >
                 <img className="mb-3" />
                 <span

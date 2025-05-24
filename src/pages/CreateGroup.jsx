@@ -12,7 +12,6 @@ const CreateGroup = () => {
 
     const formData = new FormData(form);
     const groupData = Object.fromEntries(formData.entries());
-    console.log(groupData);
 
     fetch("https://papaya-server.vercel.app/creategroup", {
       method: "POST",
@@ -22,8 +21,7 @@ const CreateGroup = () => {
       body: JSON.stringify(groupData),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
         Swal.fire({
           position: "center",
           icon: "success",
