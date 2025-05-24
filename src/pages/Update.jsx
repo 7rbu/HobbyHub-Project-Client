@@ -221,6 +221,7 @@ const Update = () => {
                   id="userName"
                   type="text"
                   value={userName}
+                  readOnly
                   name="userName"
                   required
                   placeholder="Your Full Name"
@@ -239,6 +240,7 @@ const Update = () => {
                   id="userEmail"
                   type="email"
                   value={userEmail}
+                  readOnly
                   name="userEmail"
                   required
                   placeholder="you@example.com"
