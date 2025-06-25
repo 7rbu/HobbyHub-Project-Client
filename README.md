@@ -95,7 +95,4 @@
 - Firebase + MongoDB integration
 - Full CRUD functionality
 
----
-
-## 📂 Folder Structure (Frontend)
 
