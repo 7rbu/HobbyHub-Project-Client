@@ -95,4 +95,61 @@
 - Firebase + MongoDB integration
 - Full CRUD functionality
 
+### 🛠️ Local Setup Guide
 
+Follow these steps to run the project locally:
+
+---
+
+### 1️⃣ **Clone the Repository**
+
+```bash
+https://github.com/Hossahin/HobbyHub-Project-Client.git
+```
+
+---
+
+### 2️⃣ **Navigate to the Project Directory**
+
+```bash
+cd HobbyHub-Project-Client
+```
+
+---
+
+### 3️⃣ **Install Dependencies**
+
+```bash
+npm install
+```
+
+---
+
+### 4️⃣ **Set Up Environment Variables**
+
+> Create a `.env.local` file in the root directory and add the following:
+
+```env
+VITE_APIKEY=your_api_key
+VITE_AUTHDOMAIN=your_auth_domain
+VITE_PROJECTID=your_project_id
+VITE_STORAGEBUCKET=your_storage_bucket
+VITE_MESSAGINGSENDERID=your_messaging_sender_id
+VITE_APPID=your_app_id
+```
+
+---
+
+### 5️⃣ **Start the Development Server**
+
+```bash
+npm run dev
+```
+
+---
+
+### 6️⃣ **Open the App in Browser**
+
+Visit the local server:
+
+> 🌐 [http://localhost:5173](http://localhost:5173)
